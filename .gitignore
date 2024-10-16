@@ -1,0 +1,70 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+**/*---
+# dependencies
+**/node_modules
+# roadhog-api-doc ignore
+/src/utils/request-temp.js
+_roadhog-api-doc
+/public/actual/config.json
+# production
+/dist
+/.vscode
+v8-compile-cache-0
+*-WEB
+# misc
+.DS_Store
+npm-debug.log*
+yarn-error.log
+
+/coverage
+.idea
+yarn.lock
+package-lock.json
+pnpm-lock.yaml
+*bak
+.vscode
+
+# visual studio code
+.history
+*.log
+functions/*
+.temp/**
+*-WEB/**
+# umi
+.umi
+.umi-production
+
+# screenshot
+screenshot
+.firebase
+.eslintcache
+
+# api-index
+
+build
+
+/package.json
+
+
+.gitmodules
+/.gitmodules
+
+/src/pages/goal/
+/src/pages/mid/
+# /packageLockBak/
+
+___stage
+/public/luckySheet/dist/index.html
+
+**/*---
+/public/iconfont.js
+/public/iconfontLess.js
+/public/iconfontdisabled.js
+/public/theme/iconfont.js
+/public/theme/iconfontLess.js
+/public/theme
+/public/goalPublic
+/src/dynamic/slot.js
+!/src/pages/mid/midSetting.js
+/src/pages/mid/midSetting.js
+/public/iconfontdisabled.js
