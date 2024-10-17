@@ -6,7 +6,7 @@ import User from './user'; // 你的用户管理组件
 const AppRoutes = () => (  
   <Router>  
     <Routes>  
-      <Route path="/user" element={<User/>} />  
+      <Route path="/" element={<User/>} />  
     </Routes>  
   </Router>  
 );  
