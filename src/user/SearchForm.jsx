@@ -1,7 +1,7 @@
-import { Form, Button, Input } from "antd";
-import { useCallback } from "react";
-import { useRecoilState } from "recoil";
-import { userStateAtom } from "./atom";
+import { Form, Button, Input } from 'antd';
+import { useCallback } from 'react';
+import { useRecoilState } from 'recoil';
+import { userStateAtom } from './atom';
 
 const SearchForm = (props) => {
   const [form] = Form.useForm();
@@ -26,13 +26,13 @@ const SearchForm = (props) => {
       <Button type="primary" onClick={onClickSearch}>
         搜索
       </Button>
-      <Button onClick={onClickReset} style={{ marginLeft: "10px" }}>
+      <Button onClick={onClickReset} style={{ marginLeft: '10px' }}>
         重置
       </Button>
       <Button
         type="primary"
         onClick={onClickToCreate}
-        style={{ marginLeft: "10px" }}
+        style={{ marginLeft: '10px' }}
       >
         添加
       </Button>

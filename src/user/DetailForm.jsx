@@ -1,7 +1,7 @@
-import React, { useCallback, useMemo, useEffect } from "react";
-import { Input, Form, Modal } from "antd";
-import { useRecoilState } from "recoil";
-import { userStateAtom } from "./atom";
+import React, { useCallback, useMemo, useEffect } from 'react';
+import { Input, Form, Modal } from 'antd';
+import { useRecoilState } from 'recoil';
+import { userStateAtom } from './atom';
 
 const DetailForm = (props) => {
   const [form] = Form.useForm();
@@ -24,7 +24,7 @@ const DetailForm = (props) => {
 
   return (
     <Modal
-      title={"查看用户"}
+      title={'查看用户'}
       open={detailModel}
       onOk={onClickDoCancel}
       onCancel={onClickDoCancel}

@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useMemo } from "react";
-import { Input, Form, Modal } from "antd";
-import { useRecoilState } from "recoil";
-import { userStateAtom } from "./atom";
-import _ from "lodash";
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { Input, Form, Modal } from 'antd';
+import { useRecoilState } from 'recoil';
+import { userStateAtom } from './atom';
+import _ from 'lodash';
 
 const UpdateForm = (props) => {
   const [form] = Form.useForm();
@@ -34,7 +34,7 @@ const UpdateForm = (props) => {
       return user;
     });
 
-    console.log("===users: ", updatedUsers);
+    console.log('===users: ', updatedUsers);
 
     setUserState((prevState) => ({
       ...prevState,
@@ -54,11 +54,11 @@ const UpdateForm = (props) => {
 
   return (
     <Modal
-      title={"编辑用户"}
+      title={'编辑用户'}
       open={updateModel}
       onOk={onClickDoUpdate}
       onCancel={onClickDoCancel}
-      okText={"编辑"}
+      okText={'编辑'}
     >
       <Form layout="vertical" form={form}>
         <Form.Item label="姓名" name="name">

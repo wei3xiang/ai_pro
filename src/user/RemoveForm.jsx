@@ -1,10 +1,10 @@
-import React, { useCallback, useEffect, useMemo } from "react";
-import { Input, Form, Modal } from "antd";
-import { useRecoilState } from "recoil";
-import { userStateAtom } from "./atom";
-import _ from "lodash";
+import React, { useCallback, useEffect, useMemo } from 'react';
+import { Input, Form, Modal } from 'antd';
+import { useRecoilState } from 'recoil';
+import { userStateAtom } from './atom';
+import _ from 'lodash';
 
-const CreateForm = (props) => {
+const RemoveForm = (props) => {
   const [form] = Form.useForm();
   const [userState, setUserState] = useRecoilState(userStateAtom);
 
@@ -46,7 +46,7 @@ const CreateForm = (props) => {
 
   return (
     <Modal
-      title={"删除用户"}
+      title={'删除用户'}
       open={removeModel}
       onOk={onClickDoRemove}
       onCancel={onClickDoCancel}
@@ -65,4 +65,4 @@ const CreateForm = (props) => {
     </Modal>
   );
 };
-export default CreateForm;
+export default RemoveForm;

@@ -1,7 +1,7 @@
-import React, { useCallback, useMemo } from "react";
-import { Input, Form, Modal } from "antd";
-import { useRecoilState } from "recoil";
-import { userStateAtom } from "./atom";
+import React, { useCallback, useMemo } from 'react';
+import { Input, Form, Modal } from 'antd';
+import { useRecoilState } from 'recoil';
+import { userStateAtom } from './atom';
 
 const CreateForm = (props) => {
   const [form] = Form.useForm();
@@ -40,7 +40,7 @@ const CreateForm = (props) => {
 
   return (
     <Modal
-      title={"添加用户"}
+      title={'添加用户'}
       open={createModel}
       onOk={onClickDoCreate}
       onCancel={onClickDoCancel}
