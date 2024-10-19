@@ -1,15 +1,14 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { Input, Form, Modal } from 'antd';
-import { useRecoilState } from 'recoil';
-import { bFooStateAtom } from './atom';
-import _ from 'lodash';
+import React, { useCallback, useEffect, useMemo } from "react";
+import { Input, Form, Modal } from "antd";
+import { useRecoilState } from "recoil";
+import { bFooStateAtom } from "./atom";
 
 const UpdateForm = (props) => {
   const [form] = Form.useForm();
   const [bFooState, setBFooState] = useRecoilState(bFooStateAtom);
 
   const list = useMemo(() => {
-      return bFooState?.list || [];
+    return bFooState?.list || [];
   }, [bFooState]);
 
   const updateModel = useMemo(() => {
@@ -52,75 +51,54 @@ const UpdateForm = (props) => {
 
   return (
     <Modal
-      title={'编辑'}
+      title={"编辑"}
       open={updateModel}
       onOk={onClickDoUpdate}
       onCancel={onClickDoCancel}
-      okText={'编辑'}
+      okText={"编辑"}
     >
-      <Form layout="vertical" form={form} name='basic'>
+      <Form layout="vertical" form={form} name="basic">
         <Form.Item
-          label='fooCode'
-          name='fooCode'
-          rules={[{ required: true, message: 'fooCode不能为空' }]}
+          label="fooCode"
+          name="fooCode"
+          rules={[{ required: true, message: "fooCode不能为空" }]}
         >
-        <Input />
+          <Input />
         </Form.Item>
         <Form.Item
-          label='fooName'
-          name='fooName'
-          rules={[{ required: true, message: 'fooName不能为空' }]}
+          label="fooName"
+          name="fooName"
+          rules={[{ required: true, message: "fooName不能为空" }]}
         >
-        <Input />
+          <Input />
+        </Form.Item>
+        <Form.Item label="remark" name="remark">
+          <Input />
+        </Form.Item>
+        <Form.Item label="fooDate" name="fooDate">
+          <Input />
         </Form.Item>
         <Form.Item
-          label='remark'
-          name='remark'
+          label="abandon"
+          name="abandon"
+          rules={[{ required: true, message: "abandon不能为空" }]}
         >
-        <Input />
+          <Input />
         </Form.Item>
-        <Form.Item
-          label='fooDate'
-          name='fooDate'
-        >
-        <Input />
+        <Form.Item label="seq" name="seq">
+          <Input />
         </Form.Item>
-        <Form.Item
-          label='abandon'
-          name='abandon'
-          rules={[{ required: true, message: 'abandon不能为空' }]}
-        >
-        <Input />
+        <Form.Item label="fooBigDecimal" name="fooBigDecimal">
+          <Input />
         </Form.Item>
-        <Form.Item
-          label='seq'
-          name='seq'
-        >
-        <Input />
+        <Form.Item label="fooFloat" name="fooFloat">
+          <Input />
         </Form.Item>
-        <Form.Item
-          label='fooBigDecimal'
-          name='fooBigDecimal'
-        >
-        <Input />
+        <Form.Item label="fooDouble" name="fooDouble">
+          <Input />
         </Form.Item>
-        <Form.Item
-          label='fooFloat'
-          name='fooFloat'
-        >
-        <Input />
-        </Form.Item>
-        <Form.Item
-          label='fooDouble'
-          name='fooDouble'
-        >
-        <Input />
-        </Form.Item>
-        <Form.Item
-          label='fooInteger'
-          name='fooInteger'
-        >
-        <Input />
+        <Form.Item label="fooInteger" name="fooInteger">
+          <Input />
         </Form.Item>
       </Form>
     </Modal>

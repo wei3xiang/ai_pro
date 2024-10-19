@@ -1,15 +1,14 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { Input, Form, Modal } from 'antd';
-import { useRecoilState } from 'recoil';
-import { bFooStateAtom } from './atom';
-import _ from 'lodash';
+import React, { useCallback, useEffect, useMemo } from "react";
+import { Input, Form, Modal } from "antd";
+import { useRecoilState } from "recoil";
+import { bFooStateAtom } from "./atom";
 
 const DisableForm = (props) => {
   const [form] = Form.useForm();
   const [bFooState, setBFooState] = useRecoilState(bFooStateAtom);
 
   const list = useMemo(() => {
-      return bFooState?.list || [];
+    return bFooState?.list || [];
   }, [bFooState]);
 
   const disableModel = useMemo(() => {
@@ -34,74 +33,53 @@ const DisableForm = (props) => {
 
   return (
     <Modal
-      title={'查看'}
+      title={"查看"}
       open={disableModel}
       onOk={onClickDoCancel}
       onCancel={onClickDoCancel}
     >
-      <Form layout="vertical" form={form} name='basic'>
+      <Form layout="vertical" form={form} name="basic">
         <Form.Item
-          label='fooCode'
-          name='fooCode'
-          rules={[{ required: true, message: 'fooCode不能为空' }]}
+          label="fooCode"
+          name="fooCode"
+          rules={[{ required: true, message: "fooCode不能为空" }]}
         >
-        <Input disabled/>
+          <Input disabled />
         </Form.Item>
         <Form.Item
-          label='fooName'
-          name='fooName'
-          rules={[{ required: true, message: 'fooName不能为空' }]}
+          label="fooName"
+          name="fooName"
+          rules={[{ required: true, message: "fooName不能为空" }]}
         >
-        <Input disabled/>
+          <Input disabled />
+        </Form.Item>
+        <Form.Item label="remark" name="remark">
+          <Input disabled />
+        </Form.Item>
+        <Form.Item label="fooDate" name="fooDate">
+          <Input disabled />
         </Form.Item>
         <Form.Item
-          label='remark'
-          name='remark'
+          label="abandon"
+          name="abandon"
+          rules={[{ required: true, message: "abandon不能为空" }]}
         >
-        <Input disabled/>
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooDate'
-          name='fooDate'
-        >
-        <Input disabled/>
+        <Form.Item label="seq" name="seq">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='abandon'
-          name='abandon'
-          rules={[{ required: true, message: 'abandon不能为空' }]}
-        >
-        <Input disabled/>
+        <Form.Item label="fooBigDecimal" name="fooBigDecimal">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='seq'
-          name='seq'
-        >
-        <Input disabled/>
+        <Form.Item label="fooFloat" name="fooFloat">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooBigDecimal'
-          name='fooBigDecimal'
-        >
-        <Input disabled/>
+        <Form.Item label="fooDouble" name="fooDouble">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooFloat'
-          name='fooFloat'
-        >
-        <Input disabled/>
-        </Form.Item>
-        <Form.Item
-          label='fooDouble'
-          name='fooDouble'
-        >
-        <Input disabled/>
-        </Form.Item>
-        <Form.Item
-          label='fooInteger'
-          name='fooInteger'
-        >
-        <Input disabled/>
+        <Form.Item label="fooInteger" name="fooInteger">
+          <Input disabled />
         </Form.Item>
       </Form>
     </Modal>

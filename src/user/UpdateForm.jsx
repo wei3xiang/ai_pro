@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useMemo } from "react";
 import { Input, Form, Modal } from "antd";
 import { useRecoilState } from "recoil";
 import { userStateAtom } from "./atom";
-import _ from "lodash";
 
 const UpdateForm = (props) => {
   const [form] = Form.useForm();

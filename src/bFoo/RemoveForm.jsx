@@ -1,15 +1,14 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { Input, Form, Modal } from 'antd';
-import { useRecoilState } from 'recoil';
-import { bFooStateAtom } from './atom';
-import _ from 'lodash';
+import React, { useCallback, useEffect, useMemo } from "react";
+import { Input, Form, Modal } from "antd";
+import { useRecoilState } from "recoil";
+import { bFooStateAtom } from "./atom";
 
 const RemoveForm = (props) => {
   const [form] = Form.useForm();
   const [bFooState, setBFooState] = useRecoilState(bFooStateAtom);
 
   const list = useMemo(() => {
-      return bFooState?.list || [];
+    return bFooState?.list || [];
   }, [bFooState]);
 
   const removeModel = useMemo(() => {
@@ -25,10 +24,11 @@ const RemoveForm = (props) => {
   }, []);
 
   const onClickDoRemove = useCallback(() => {
-    const restItems = _.filter(
-      list,
-      (item) => !_.eq(item.uuid, removeModel?.uuid)
-    );
+    // const restItems = _.filter(
+    //   list,
+    //   (item) => item.uuid !== removeModel?.uuid)
+    // );
+    const restItems = [];
     setBFooState((prevState) => ({
       ...prevState,
       list: [...restItems],
@@ -46,71 +46,41 @@ const RemoveForm = (props) => {
 
   return (
     <Modal
-      title={'删除'}
+      title={"删除"}
       open={removeModel}
       onOk={onClickDoRemove}
       onCancel={onClickDoCancel}
     >
-      <Form layout="vertical" form={form} name='basic'>
-        <Form.Item
-          label='fooCode'
-          name='fooCode'
-        >
-<Input disabled />
+      <Form layout="vertical" form={form} name="basic">
+        <Form.Item label="fooCode" name="fooCode">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooName'
-          name='fooName'
-        >
-<Input disabled />
+        <Form.Item label="fooName" name="fooName">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='remark'
-          name='remark'
-        >
-<Input disabled />
+        <Form.Item label="remark" name="remark">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooDate'
-          name='fooDate'
-        >
-<Input disabled />
+        <Form.Item label="fooDate" name="fooDate">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='abandon'
-          name='abandon'
-        >
-<Input disabled />
+        <Form.Item label="abandon" name="abandon">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='seq'
-          name='seq'
-        >
-<Input disabled />
+        <Form.Item label="seq" name="seq">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooBigDecimal'
-          name='fooBigDecimal'
-        >
-<Input disabled />
+        <Form.Item label="fooBigDecimal" name="fooBigDecimal">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooFloat'
-          name='fooFloat'
-        >
-<Input disabled />
+        <Form.Item label="fooFloat" name="fooFloat">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooDouble'
-          name='fooDouble'
-        >
-<Input disabled />
+        <Form.Item label="fooDouble" name="fooDouble">
+          <Input disabled />
         </Form.Item>
-        <Form.Item
-          label='fooInteger'
-          name='fooInteger'
-        >
-<Input disabled />
+        <Form.Item label="fooInteger" name="fooInteger">
+          <Input disabled />
         </Form.Item>
       </Form>
     </Modal>

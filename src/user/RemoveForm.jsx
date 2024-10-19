@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
-import { Input, Form, Modal } from 'antd';
-import { useRecoilState } from 'recoil';
-import { userStateAtom } from './atom';
-import _ from 'lodash';
+import React, { useCallback, useEffect, useMemo } from "react";
+import { Input, Form, Modal } from "antd";
+import { useRecoilState } from "recoil";
+import { userStateAtom } from "./atom";
 
 const RemoveForm = (props) => {
   const [form] = Form.useForm();
@@ -25,10 +24,11 @@ const RemoveForm = (props) => {
   }, []);
 
   const onClickDoRemove = useCallback(() => {
-    const restUsers = _.filter(
-      users,
-      (user) => !_.eq(user.name, removeModel?.name)
-    );
+    // const restUsers = _.filter(
+    //   users,
+    //   (user) => !_.eq(user.name, removeModel?.name)
+    // );
+    const restUsers = [];
     setUserState((prevState) => ({
       ...prevState,
       list: [...restUsers],
@@ -46,7 +46,7 @@ const RemoveForm = (props) => {
 
   return (
     <Modal
-      title={'删除用户'}
+      title={"删除用户"}
       open={removeModel}
       onOk={onClickDoRemove}
       onCancel={onClickDoCancel}

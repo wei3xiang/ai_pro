@@ -6,13 +6,8 @@ import {
   Link,
   useLocation,
 } from "react-router-dom";
-import {
-  UserOutlined,
-  TeamOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-} from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
+import { Layout, Menu, theme } from "antd";
 import { RecoilRoot } from "recoil";
 import User from "./user";
 import BFoo from "./bFoo";
@@ -21,11 +16,14 @@ const { Header, Sider, Content } = Layout;
 
 function App() {
   const [collapsed, setCollapsed] = useState(false);
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
   return (
     <React.StrictMode>
       <RecoilRoot>
         <Router>
-          <Layout title="AI YiShow" navTheme="dark" location={location}>
+          <Layout>
             <Sider trigger={null} collapsible collapsed={collapsed}>
               <div className="demo-logo-vertical" />
               <SideMenu />
@@ -45,7 +43,15 @@ function App() {
                   }
                 )}
               </Header>
-              <Content>
+              <Content
+                style={{
+                  margin: "24px 16px",
+                  padding: 24,
+                  minHeight: 280,
+                  background: colorBgContainer,
+                  borderRadius: borderRadiusLG,
+                }}
+              >
                 <Routes>
                   <Route path="/user" element={<User />} />
                   <Route path="/bFoo" element={<BFoo />} />
@@ -63,14 +69,12 @@ function SideMenu() {
   const location = useLocation();
   const items = [
     {
-      key: "/users",
-      icon: <UserOutlined />,
-      label: <Link to="/users">用户管理</Link>,
+      key: "/user",
+      label: <Link to="/user">user</Link>,
     },
     {
-      key: "/classes",
-      icon: <TeamOutlined />,
-      label: <Link to="/classes">班级管理</Link>,
+      key: "/bFoo",
+      label: <Link to="/bFoo">bFoo</Link>,
     },
   ];
 
@@ -78,7 +82,7 @@ function SideMenu() {
     <Menu
       theme="dark"
       mode="inline"
-      defaultSelectedKeys={["/"]}
+      defaultSelectedKeys={["/user"]}
       selectedKeys={[location.pathname]}
       items={items}
     />
