@@ -1,17 +1,14 @@
-import React from "react";
 import SearchForm from "./SearchForm";
 import CreatForm from "./CreateForm";
 import UpdateForm from "./UpdateForm";
 import RemoveForm from "./RemoveForm";
 import DisableForm from "./DisableForm";
 import List from "./List";
-import { PageContainer } from "@ant-design/pro-components";
-import { Space } from "antd";
-import "./index.less";
+import "./index.css";
 
 const Index = (props) => {
   return (
-    <PageContainer header={{ title: "" }}>
+    <div>
       <div>
         <div className="searchBg">
           <SearchForm />
@@ -24,7 +21,7 @@ const Index = (props) => {
       <UpdateForm />
       <RemoveForm />
       <DisableForm />
-    </PageContainer>
+    </div>
   );
 };
 
